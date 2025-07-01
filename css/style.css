@@ -1,0 +1,983 @@
+/********** Template CSS **********/
+:root {
+    --primary: #AB7442;
+    --light: #F5F5F5;
+    --dark: #353535;
+}
+
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.fw-black {
+    font-weight: 900 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #150f0f;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #0e77c2;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+    height: 75px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #013061 
+    font-weight: 500;
+}
+
+.navbar-light.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item {
+        position: relative;
+        min-height: 500px;
+    }
+    
+    .header-carousel .owl-carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .header-carousel .owl-carousel-item h5,
+    .header-carousel .owl-carousel-item p {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+
+    .header-carousel .owl-carousel-item h1 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+}
+
+.header-carousel .owl-nav {
+    position: absolute;
+    width: 200px;
+    height: 45px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    background: #2462a3;
+    border-color: #2462a3;
+}
+
+.header-carousel .owl-dots {
+    position: absolute;
+    height: 45px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    transition: .5s;
+}
+
+.header-carousel .owl-dot::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    top: 4px;
+    left: 4px;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+}
+
+.header-carousel .owl-dot.active {
+    background: #2462a3;
+    border-color: #2462a3;
+}
+
+.page-header {
+    background: linear-gradient(rgba(53, 53, 53, .7), rgba(53, 53, 53, .7)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Section Title ***/
+.section-title h1 {
+    position: relative;
+    display: inline-block;
+    padding: 0 60px;
+}
+
+.section-title.text-start h1 {
+    padding-left: 0;
+}
+
+.section-title h1::before,
+.section-title h1::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 5px;
+    bottom: 0;
+    background: #013061 
+}
+
+.section-title h1::before {
+    left: 0;
+}
+
+.section-title h1::after {
+    right: 0;
+}
+
+.section-title.text-start h1::before {
+    display: none;
+}
+
+
+/*** About ***/
+@media (min-width: 992px) {
+    .container.about {
+        max-width: 100% !important;
+    }
+
+    .about-text  {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-text  {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-text  {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Service ***/
+.service-item img {
+    transition: .5s;
+}
+
+.service-item:hover img {
+    transform: scale(1.1);
+}
+
+
+/*** Feature ***/
+@media (min-width: 992px) {
+    .container.feature {
+        max-width: 100% !important;
+    }
+
+    .feature-text  {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .feature-text  {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .feature-text  {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Project Portfolio ***/
+#portfolio-flters li {
+    display: inline-block;
+    font-weight: 500;
+    color: #013061 
+    cursor: pointer;
+    transition: .5s;
+    border-bottom: 2px solid transparent;
+}
+
+#portfolio-flters li:hover,
+#portfolio-flters li.active {
+    color: #2462a3;
+    border-color: #2462a3;
+}
+
+.portfolio-item img {
+    transition: .5s;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item .portfolio-overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: 50%;
+    background: rgba(53, 53, 53, .7);
+    transition: .5s;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.portfolio-item .portfolio-overlay .btn {
+    opacity: 0;
+}
+
+.portfolio-item:hover .portfolio-overlay .btn {
+    opacity: 1;
+}
+
+
+/*** Quote ***/
+@media (min-width: 992px) {
+    .container.quote {
+        max-width: 100% !important;
+    }
+
+    .quote-text  {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .quote-text  {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .quote-text  {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Team ***/
+.team-item img {
+    transition: .5s;
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.team-item .team-social {
+    position: absolute;
+    width: 38px;
+    top: 50%;
+    left: -38px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    transition: .5s;
+}
+
+.team-item .team-social .btn {
+    color: #2462a3;
+    background: #FFFFFF;
+}
+
+.team-item .team-social .btn:hover {
+    color: #FFFFFF;
+    background: #2462a3;
+}
+
+.team-item:hover .team-social {
+    left: 0;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.testimonial-carousel::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 300px;
+    }
+}
+
+.testimonial-carousel .owl-item .testimonial-text {
+    border: 5px solid var(--light);
+    transform: scale(.8);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    transform: scale(1);
+}
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    width: 350px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: .5s;
+    z-index: 1;
+}
+
+.testimonial-carousel:hover .owl-nav {
+    width: 300px;
+    opacity: 1;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    position: relative;
+    color: #2462a3;
+    font-size: 45px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    color: #013061 
+}
+
+
+/*** Contact ***/
+@media (min-width: 992px) {
+    .container.contact {
+        max-width: 100% !important;
+    }
+
+    .contact-text  {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-text  {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .contact-text  {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Footer ***/
+.footer {
+    background: linear-gradient(rgba(53, 53, 53, .7), rgba(53, 53, 53, .7)), url(../img/footer.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: #2462a3;
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: #2462a3;
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .copyright a:hover {
+    color: #2462a3;
+}
+/* Search Form Styling - Responsive CSS */
+form.d-flex {
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+input.form-control {
+  width: 100%;
+  max-width: 300px;
+  min-width: 100px; /* Ensures it doesn’t shrink too much */
+  padding: 8px;
+  border: 1px solid #444;
+  background-color: #f5f5f500;
+  color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  /* Handling text overflow */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+input.form-control::placeholder {
+  color: #888;
+}
+
+input.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+  outline: none;
+}
+
+button.btn {
+  padding: 8px 15px;
+  margin-left: 2px; /* Minimal gap between search box and button */
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #029400;
+  color: #fff;
+}
+
+button.btn:active {
+  background-color: #00c33a;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  form.d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input.form-control {
+    max-width: 100%;
+    min-width: 200px; /* Ensures it doesn’t get too small */
+    margin-bottom: 10px;
+  }
+  
+  button.btn {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  form.d-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  input.form-control {
+    font-size: 14px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button.btn {
+    width: 100%;
+    padding: 8px 12px;
+  }
+}
+
+.container-xxl {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.acm-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #115298; /* Custom color for emphasis */
+  margin-bottom: 0.5rem;
+}
+
+.acm-subtitle {
+  font-size: 1.25rem;
+  color: #0195da; /* Darker color for contrast */
+  margin-top: 0;
+}
+
+
+/* video in about */
+.video-container {
+    position: relative;
+    min-height: 400px;
+    border: 5px solid transparent; /* Transparent border to make space for gradient border */
+    border-radius: 8px; /* Optional: for rounded corners */
+    background: linear-gradient(blue, transparent);
+    padding: 5px; /* Adjust padding to control border thickness */
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.blue-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px; /* Adjust height to control the shade size */
+    background: rgba(92, 92, 134, 0.3); /* Blue shade with transparency */
+    border-radius: 8px 8px 0 0; /* Match border-radius of the container if used */
+}
+
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px; /* Match border-radius of the container if used */
+    border: 5px solid transparent;
+    border-image: linear-gradient(blue, lightblue); /* Gradient color */
+    border-image-slice: 1;
+}
+
+
+.min-left-gap {
+  padding-left: 6px; /* Adjust the value as needed left side gap in about tab*/
+}
+
+
+/* Ensure the modal and carousel are displayed properly */
+/* Modal Dialog */
+.modal-dialog {
+    max-width: 80%;
+    margin: 1.75rem auto;
+}
+
+/* Modal Content */
+.modal-content {
+    border-radius: 1rem;
+}
+
+/* Carousel Image Container */
+.carousel-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Carousel Images */
+.carousel-inner img {
+    width: 50%;
+    margin: 0 auto; /* Center align the image */
+    height: auto;
+    object-fit: cover;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-controls button i {
+    font-size: 24px;
+}
+
+
+/* Modal Header */
+.modal-header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem;
+    border-bottom: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+/* Carousel Image */
+.carousel-item img {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Content Section */
+.content-section {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Learn More Button */
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+    align-self: flex-start;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Modal Header */
+.modal-header {
+    background-color: #f8f9fa; /* Sets the background color of the modal header */
+    padding: 1rem; /* Adds padding around the header content */
+    border-bottom: 1px solid #dee2e6; /* Adds a light gray border at the bottom of the header */
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 1.5rem; /* Adds padding around the body content */
+    display: flex; /* Sets up a flexbox layout for the body content */
+    flex-direction: row; /* Arranges the content in a horizontal row (side by side) */
+}
+
+/* Photo and Description Equal Size in Desktop Mode */
+.carousel, .content-section {
+    width: 50%; /* Each section (carousel and content) takes up 50% of the modal body width */
+    max-width: 50%; /* Ensures that each section does not exceed 50% of the width */
+}
+
+/* Learn More Button */
+.btn-primary {
+    background-color: #007bff; /* Sets the background color of the button */
+    border-color: #007bff; /* Sets the border color of the button */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Changes the background color when the button is hovered */
+    border-color: #004085; /* Changes the border color when the button is hovered */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .modal-body {
+        flex-direction: column; /* Stacks the carousel and content vertically (image on top, content below) */
+        padding: 0; /* Removes padding around the modal body for better use of space */
+    }
+
+    .carousel, .content-section {
+        width: 100%; /* Each section takes up 100% of the modal body width in responsive mode */
+        max-width: 100%; /* Ensures that each section does not exceed 100% of the width */
+    }
+
+    .carousel img {
+        width: 100%; /* Ensures that the images fill the width of the carousel */
+        height: auto; /* Maintains the aspect ratio of the images */
+        border-radius: 0; /* Removes any border-radius to make the images fit the modal width */
+    }
+
+    .content-section {
+        padding: 1.5rem; /* Adds padding to the content section in responsive mode */
+        text-align: left; /* Aligns text to the left in the content section */
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 0; /* Removes margin around the modal dialog for better use of screen space */
+    }
+
+    .modal-content {
+        border-radius: 0; /* Removes the border radius to make the modal content square-edged */
+    }
+
+    .carousel img {
+        width: 100%; /* Ensures that the images fill the width of the carousel */
+        height: auto; /* Maintains the aspect ratio of the images */
+    }
+
+    .content-section {
+        padding: 1rem; /* Reduces the padding in the content section for smaller screens */
+    }
+
+}
+
+
